@@ -1,0 +1,21 @@
+<h1>Delete <%= @movie.title %></h1>
+<form action="/movies/<%= @movie.id %>" method="post">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<p>
+		<label>Title:</label>
+		<input type="text" name="movie[title]" value="<%= @movie.title %>" disabled>
+	</p>
+	<p>
+		<label>Duration:</label>
+		<input type="text" name="movie[duration]" value="<%= @movie.duration %>" disabled>
+	</p>
+	<p>
+		<label>Rating:</label>
+		<input type="text" name="movie[rating]" value="<%= @movie.rating %>" disabled>
+	</p>
+	<p>
+		<label>Release Date:</label>
+		<input type="text" name="movie[release_date]" value="<%= @movie.release_date %>" disabled>
+	</p>
+	<input type="submit" value="Delete">
+</form>
