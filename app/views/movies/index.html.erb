@@ -1,0 +1,29 @@
+<h1>View <%= pluralize(@movies.count, "Movie") %></h1>
+<table>
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Duration</th>
+			<th>Rating</th>
+			<th>Release Date</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @movies.each do |movie| %>
+		<tr>
+			<td><%= movie.title %></td>
+			<td><%= movie.duration %></td>
+			<td><%= movie.rating %></td>
+			<td><%= movie.release_date %></td>
+			<td>
+				<a href="/movies/<%= movie.id %>">Show</a>
+				<a href="/movies/<%= movie.id %>/edit">Edit</a>
+				<a href="/movies/<%= movie.id %>" data-method="delete"
+					data-confirm="Are you sure?">Delete</a>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<a href="/movies/new">Create Movie</a>
