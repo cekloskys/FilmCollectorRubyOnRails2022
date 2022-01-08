@@ -1,11 +1,11 @@
 <h1>View Actor's <%= pluralize(@movies.count, "Movie") %></h1>
-<table>
+<table class="table table-striped">
 	<thead>
 		<tr>
-			<th>Title</th>
-			<th>Duration</th>
-			<th>Rating</th>
-			<th>Release Date</th>
+			<th scope="col">Title</th>
+			<th scope="col">Duration</th>
+			<th scope="col">Rating</th>
+			<th scope="col">Release Date</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -19,4 +19,4 @@
 		<% end %>
 	</tbody>
 </table>
-<a href="/actors">View Actors</a>
+<!-- <a href="/actors">View Actors</a> -->

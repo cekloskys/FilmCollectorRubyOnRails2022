@@ -2,26 +2,26 @@
 <form action="/movies/<%= @movie.id %>" method="post">
 	<input type="hidden" name="_method" value="patch">
 	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-	<p>
+	<div class="form-group">
 		<label>Title:</label>
-		<input type="text" name="movie[title]" value="<%= @movie.title %>">
-	</p>
-	<p>
+		<input type="text" name="movie[title]" value="<%= @movie.title %>" class="form-control">
+	</div>
+	<div class="form-group">
 		<label>Duration:</label>
-		<input type="text" name="movie[duration]" value="<%= @movie.duration %>">
-	</p>
-	<p>
+		<input type="text" name="movie[duration]" value="<%= @movie.duration %>" class="form-control">
+	</div>
+	<div class="form-group">
 		<label>Rating:</label>
-		<input type="text" name="movie[rating]" value="<%= @movie.rating %>">
-	</p>
-	<p>
+		<input type="text" name="movie[rating]" value="<%= @movie.rating %>" class="form-control">
+	</div>
+	<div class="form-group">
 		<label>Release Date:</label>
-		<input type="text" name="movie[release_date]" value="<%= @movie.release_date %>">
-	</p>
-	<input type="submit" value="Update">
+		<input type="text" name="movie[release_date]" value="<%= @movie.release_date %>" class="form-control">
+	</div>
+	<input type="submit" value="Update" class="btn btn-primary">
 </form>
 <% if flash[:errors] %>
 	<% flash[:errors].each do |e| %>
-	<p><%= e %></p>
+	<div class="alert alert-danger"><%= e %></div>
 	<% end %>
 <% end %>

@@ -1,28 +1,28 @@
 <h1>Create Appearance</h1>
 <form action="/appearances" method="post">
 	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-	<p>
+	<div class="form-group">
 		<label>Actor:</label>
-		<select name="appearance[actor_id]" id="actor_id">
+		<select name="appearance[actor_id]" id="actor_id" class="form-select" aria-label="Default select example">
 			<option></option>
 			<% @actors.each do |actor| %>
 			<option value="<%= actor.id %>"><%= actor.first_name %> <%= actor.last_name %></option>
 			<% end %>
 		</select>
-	</p>
-	<p>
+	</div>
+	<div class="form-group">
 		<label>Last Name:</label>
-		<select name="appearance[movie_id]" id="movie_id">
+		<select name="appearance[movie_id]" id="movie_id" class="form-select" aria-label="Default select example">
 			<option></option>
 			<% @movies.each do |movie| %>
 			<option value="<%= movie.id %>"><%= movie.title %></option>
 			<% end %>
 		</select>
-	</p>
-	<input type="submit" value="Create">
+	</div>
+	<input type="submit" value="Create" class="btn btn-primary">
 </form>
 <% if flash[:errors] %>
 	<% flash[:errors].each do |e| %>
-	<p><%= e %></p>
+	<div class="alert alert-danger"><%= e %></div>
 	<% end %>
 <% end %>
