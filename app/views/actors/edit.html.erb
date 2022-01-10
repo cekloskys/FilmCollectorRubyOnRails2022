@@ -12,8 +12,13 @@
 	</div>
 	<input type="submit" value="Update" class="btn btn-primary">
 </form>
+<!--
+check if there is a Rails flash object named errors.
+if there is, iterate over the code block for each of the full messages stored in it.
+-->
 <% if flash[:errors] %>
 	<% flash[:errors].each do |e| %>
 	<div class="alert alert-danger"><%= e %></div>
 	<% end %>
 <% end %>
+<!-- Parameters: {"authenticity_token"=>"[FILTERED]", "actor"=>{"first_name"=>"Sam", "last_name"=>"Worthington"}} -->
